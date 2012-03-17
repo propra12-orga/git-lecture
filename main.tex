@@ -33,7 +33,7 @@
     \item<2->Import und Export zwischen Repositories
       \begin{itemize}
           \item zentrale Repositories zur Zusammenarbeit möglich
-          \item Unterscheidung zwischen lokalen und entfernten Repositories
+          \item Unterscheidung lokale und entfernte Repositories ("`Remotes"')
       \end{itemize}
     \item <3->Fast sämtliche Versionierungsarbeit im lokalen Repository
       \begin{itemize}
@@ -52,8 +52,17 @@
   \begin{itemize}
     \item Jede Version in Objektdatenbank in \texttt{.git/objects}
     \item <2->Blob-Objekte
+      \begin{itemize}
+        \item Datei-Inhalte
+      \end{itemize}
     \item <3->Tree-Objekte
+      \begin{itemize}
+        \item Verzeichnisse
+      \end{itemize}
     \item <4->Commit-Objekte
+      \begin{itemize}
+        \item Tree-Snapshots
+      \end{itemize}
   \end{itemize}
 \end{frame}
 \begin{frame}
