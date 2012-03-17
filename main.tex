@@ -24,10 +24,86 @@
 \subsection{Dezentrale Versionierung}
 \begin{frame}
   \frametitle{Dezentrale Versionierung}
+  \begin{itemize}
+    \item<1->Kopie des Repositories in jeder Arbeitskopie enthalten
+      \begin{itemize}
+        \item In: \texttt{<project-path>/.git}
+        \item Arbeitskopie und Repository synonym
+      \end{itemize}
+    \item<2->Import und Export zwischen Repositories
+      \begin{itemize}
+          \item zentrale Repositories zur Zusammenarbeit möglich
+          \item Unterscheidung zwischen lokalen und entfernten Repositories
+      \end{itemize}
+    \item <3->Fast sämtliche Versionierungsarbeit im lokalen Repository
+      \begin{itemize}
+          \item Wesentlich höhere Arbeitsgeschwindigkeit
+      \end{itemize}
+    \item <4->Freiheit für die Entwickler
+  \end{itemize}
 \end{frame}
 \subsection[Trees, Commits \& Blobs]{Aufbau und Bestandteile von GIT-Repositories}
 \begin{frame}
   \frametitle{Trees, Commits \& Blobs}
+  \begin{itemize}
+    \item Jede Version in Objektdatenbank in \texttt{.git/objects}
+    \item <2->Blob-Objekte
+    \item <3->Tree-Objekte
+    \item <4->Commit-Objekte
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Blob-Objekte}
+  \begin{itemize}
+    \item Repräsentieren Inhalte (von Dateien)
+    \item Dargestellt durch einen SHA1-Hashwert (u.A. abhängig vom Inhalt der Datei)
+    \item Gleicher Datei-Inhalt $\Rightarrow$ Wiederverwendung des Blob-Objekts
+    \item Kein Blob-Objekt, keine Versionierung
+      \begin{itemize}
+        \item Leere Verzeichnisse werden nicht versioniert.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Tree-Objekte}
+  \begin{itemize}
+    \item<1>Entsprechen Verzeichnissen im Dateisystem
+    \item<1>Ebenfalls durch SHA1-Hashwert dargestellt
+      \begin{itemize}
+        \item unter Anderem abhängig von den enthaltenen Trees und Blobs
+      \end{itemize}
+    \item<1>Mindestens ein Blob- oder Tree-Objekt inklusive Namen zugeordnet
+      \begin{itemize}
+        \item Tree und Blob oder anderer Tree ergeben Datei-/Verzeichnisreferenz
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Tree-Objekte Beispiel}
+  \begin{center}
+    \includegraphics{images/tree-example.png}
+  \end{center}
+\end{frame}
+\begin{frame}
+  \frametitle{Commit-Objekte}
+  \begin{itemize}
+    \item<1->Speichern Versionen der Daten
+    \item<1->Beinhalten ein Tree-Objekt und einen oder mehrere Eltern-Commits
+    \item<1->Dargestellt durch SHA1-Hashwert ($=$ Commit-ID)
+      \begin{itemize}
+        \item unter Anderem abhängig von den enthaltenen Trees, dem Autor sowie dem Datum und der Uhrzeit des Commits
+      \end{itemize}
+    \item<2->Commit-ID abhängig von den Trees $\Rightarrow$ abhängig von den Blobs $\Rightarrow$ abhängig von den Datei-Inhalten
+    \item<3->Commit in Gesamtheit als \emph{Arbeitsschritt $X$} zum \emph{Zeitpunkt $Y$} von \emph{Person $Z$} weltweit eindeutig identifizierbar
+    \item<4->(Sicherheits-)kopie aller Commits in jeder Arbeitskopie vorhanden
+    \item<5->$\Rightarrow$ Sicherheitsvorteil (bsp. Linux Kernel)
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Commit-Objekte Beispiel}
+  \begin{center}
+    \includegraphics{images/commit-example.png}
+  \end{center}
 \end{frame}
 \subsection[Remotes, Branches \& Tags]{Verteilung und Strukturierung der Historie}
 \begin{frame}
