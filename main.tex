@@ -114,6 +114,65 @@
   \frametitle{Remotes, Branches \& Tags}
   \tableofcontents[currentsection,currentsubsection]
 \end{frame}
+\begin{frame}
+  \frametitle{Remotes, Branches \& Tags}
+  \begin{itemize}
+    \item Verteilung und Organisation des Commit-Trees
+    \item<2->Remotes
+      \begin{itemize}
+        \item Entfernte Repositories zur gemeinsamen Verwendung
+        \item Verwaltung mehrerer Remotes möglich
+      \end{itemize}
+    \item<3->Branches \& Tags
+      \begin{itemize}
+        \item Organisation verschiedener Entwicklungszweige und Releases.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Remotes}
+  \begin{itemize}
+    \item Dienen der Verteilung der Commits und Branches
+    \item<2->Lokal oder irgendwo im Netzwerk/internet
+    \item<3->Verschiedene Deployment- und Entwicklungsremotes möglich
+    \item<4->Bonus: SVN-Remotes ebenfalls möglich
+      \begin{itemize}
+        \item Killer-Methode zur Migration von SVN zu GIT
+        \item Ansonsten aufgrund der Implementierungsdetails nur in wenigen Fällen praktikabel
+      \end{itemize}
+    \item<5->Vorgriff: Zur Verteilung von Commits ist ein Schritt mehr erforderlich als bei SVN.
+      \begin{itemize}
+        \item<6->ABER: It's a feature, not a constraint.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Branches \& Tags}
+  \begin{itemize}
+    \item<1->Branches und Tags sind \emph{Referenzen auf Objekte} und \textbf{keine} Kopien von Unterverzeichnissen in andere Unterverzeichnisse innerhalb des Repositories.
+      \begin{itemize}
+        \item Ausgereifter Branching-Mechanismus im VCS implementiert und nicht durch den Entwickler emuliert
+      \end{itemize}
+    \item<2->Referenzieren meistens Commits
+    \item<3->Elterncommits werden dem Branch/Tag zugeordnet
+    \item<4->Branch-Referenzen zeigen immer auf den neuesten Commit, Tags sind konstant (meistens)
+    \item<5->Unterscheidung zwischen Remote und Lokalen Branches
+      \begin{itemize}
+        \item \texttt{remote/main} und \texttt{main} verschiedene Branches
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Branches Beispiel}
+  \begin{center}
+    \vspace{-1cm}
+    \begin{tabular}{p{0.55\textwidth}p{0.35\textwidth}}
+      \center{\textbf{Vorher}} & \center{\textbf{Nachher}} \\
+      \vspace{-8mm}\begin{FlushLeft}\includegraphics[height=.75\textheight]{images/branch-example.png}\end{FlushLeft} &
+      \vspace{-8mm}\begin{flushright}\includegraphics[height=.75\textheight]{images/branch-example2.png}\end{flushright}\\
+    \end{tabular}
+  \end{center}
+\end{frame}
 %
 \section{GIT vs. SVN}
 \subsection{Rückblick zu SVN}
