@@ -1,0 +1,93 @@
+\subsection{Tabellarischer Vergleich}
+\begin{frame}
+  \frametitle{Tabellarischer Vergleich}
+  \tableofcontents[currentsection,currentsubsection]
+\end{frame}
+\begin{frame}
+  \frametitle{Repositories \& Arbeitskopien}
+  \begin{center}
+    \begin{tabular}{|l|l|l|}
+      \hline
+      \textbf{Aktion} & \textbf{GIT} & \textbf{SVN} \\ \hline 
+      \multirow{2}{*}{Erzeugen} & \texttt{cd <repo>} & \texttt{svnadmin create <repo>} \\
+                                           & \texttt{git init .} & \texttt{svn checkout file://repo} \\ \hline
+      Klonen & \texttt{git clone <url>} & \texttt{svn checkout <url>} \\ \hline
+      Status & \texttt{git status} & \texttt{svn status} \\ \hline
+    \end{tabular}
+  \end{center}
+\end{frame}
+\begin{frame}
+  \frametitle{Dateien \& Commits}
+  \begin{center}
+    \begin{tabular}{|l|l|l|}
+      \hline
+      \textbf{Aktion} & \textbf{GIT} & \textbf{SVN} \\ \hline
+      Dateien hinzufügen & \texttt{git add <path>} & \texttt{svn add <path>} \\ \hline
+      Dateien entfernen & \texttt{git rm <path>} & \texttt{svn rm <path>} \\ \hline
+      Dateien verschieben & \texttt{git mv <path>} & \texttt{svn mv <path>} \\ \hline
+    Änderungen hinzufügen & \texttt{git add <path>} & \texttt{???} \\ \hline
+    Commit der Änderungen & \texttt{git commit} & \texttt{???} \\ \hline
+  Commit aller Änderungen & \texttt{git commit -a} & \texttt{svn commit} \\ \hline
+    \end{tabular}
+  \end{center}
+\end{frame}
+\begin{frame}
+  \frametitle{Remotes \& Branches}
+  \begin{center}
+    \begin{tabular}{|l|l|l|}
+      \hline
+      \textbf{Aktion} & \textbf{GIT} & \textbf{SVN} \\ \hline
+      Commits auf Remote & \texttt{git push} & \texttt{svn commit} \\ \hline
+      Commits von Remote & \texttt{git fetch} & \texttt{???} \\ \hline
+      Commits von Remote mergen & \texttt{git pull} & \texttt{svn update} \\ \hline
+      Branch erzeugen\footnote{Branch Kommandos funktionieren für Tags analog} & \texttt{git branch <name>} & \texttt{-} \\ \hline
+      In Branch wechseln & \texttt{git checkout <name>} & \texttt{-} \\ \hline
+      Branch mergen & \texttt{git merge <name>} & \texttt{-} \\ \hline
+    \end{tabular}
+  \end{center}
+\end{frame}
+\begin{frame}
+  \frametitle{Commit History}
+  \begin{center}
+    \begin{tabular}{|l|l|l|}
+      \hline
+      \textbf{Aktion} & \textbf{GIT} & \textbf{SVN} \\ \hline
+         Log aufrufen & \texttt{git log} & \texttt{svn log} \\ \hline
+         Datei blamen & \texttt{git blame <path>} & \texttt{svn blame <path>} \\ \hline
+         Version wechseln & \texttt{git checkout <commit-id>} & \texttt{svn revert id} \\ \hline
+    \end{tabular}
+  \end{center}
+\end{frame}
+\begin{frame}
+  \frametitle{Lokal vs. Remote - Best Practices}
+  \begin{itemize}
+    \item Außer status, push, fetch und pull keine Aktivität auf Remotes
+      \begin{itemize}
+        \item Alles geht viel schneller.
+      \end{itemize}
+    \item<2->Zuerst Arbeitschritte in sinnvolle Commits verpacken
+    \item<3->Zur Not: Commits nachträglich modifizierbar
+    \item<4->Erst am Ende auf den Remote "pushen"
+      \begin{itemize}
+        \item<5->Commits auch remote modifizierbar
+        \item<5->Aber: Bei mehr als einem Mitarbeiter sehr hohes Konfliktpotential durch Modifikation von Remote-Histories
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Grafische Frontends}
+  \begin{itemize}
+    \item SVN Standalone: RapidSVN, TortoiseSVN für Windows
+    \item<2->SVN Eclipse-Plugin: Subversive, Subclipse
+    \item<3->GIT Standalone: gitk, giggle, TortoiseGIT für Windows
+      \begin{itemize}
+        \item gitk \& giggle eignen sich nur zur Übersicht
+        \item Mir ist keine brauchbare GUI für Linux bekannt. Ob TortoiseGIT brauchbar ist, weiß ich nicht.
+      \end{itemize}
+    \item<4->GIT Eclipse-Plugin: egit
+      \begin{itemize}
+        \item Relativ brauchbarer Eindruck
+        \item Eclipse hat Probleme mit SSH-Keys
+      \end{itemize}
+  \end{itemize}
+\end{frame}
