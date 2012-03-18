@@ -9,10 +9,10 @@
   \titlepage
 \end{frame}
 %
-\section*{Gliederung}
+\section*{Agenda}
 \setcounter{framenumber}{0}
 \begin{frame}
-  \frametitle{Gliederung}
+  \frametitle{Agenda}
   \tableofcontents
 \end{frame}
 %
@@ -25,7 +25,7 @@
 \begin{frame}
   \frametitle{Dezentrale Versionierung}
   \begin{itemize}
-    \item<1->Kopie des Repositories in jeder Arbeitskopie enthalten
+    \item<1->Kopie des Repositorys in jeder Arbeitskopie enthalten
       \begin{itemize}
         \item In: \texttt{<project-path>/.git}
         \item Arbeitskopie und Repository synonym
@@ -107,7 +107,8 @@
         \item unter Anderem abhängig von den enthaltenen Trees, dem Autor sowie dem Datum und der Uhrzeit des Commits
       \end{itemize}
     \item<2->Commit-ID abhängig von den Trees $\Rightarrow$ abhängig von den Blobs $\Rightarrow$ abhängig von den Datei-Inhalten
-    \item<3->Commit in Gesamtheit als \emph{Arbeitsschritt $X$} zum \emph{Zeitpunkt $Y$} von \emph{Person $Z$} weltweit eindeutig identifizierbar
+    \item<3->Commit in Gesamtheit als \emph{Arbeitsschritt $X$} zum
+      \emph{Zeitpunkt $Y$} von \emph{Person $Z$} global eindeutig identifizierbar
     \item<4->(Sicherheits-)kopie aller Commits in jeder Arbeitskopie vorhanden
     \item<5->$\Rightarrow$ Sicherheitsvorteil (bsp. Linux Kernel)
   \end{itemize}
@@ -158,7 +159,7 @@
 \begin{frame}
   \frametitle{Branches \& Tags}
   \begin{itemize}
-    \item<1->Branches und Tags sind \emph{Referenzen auf Objekte} und \textbf{keine} Kopien von Unterverzeichnissen in andere Unterverzeichnisse innerhalb des Repositories.
+    \item<1->Branches und Tags sind \textbf{keine} Kopien von Unterverzeichnissen in andere Unterverzeichnisse innerhalb des Repositorys sondern \textbf{Referenzen auf Objekte}.
       \begin{itemize}
         \item Ausgereifter Branching-Mechanismus im VCS implementiert und nicht durch den Entwickler emuliert
       \end{itemize}
