@@ -25,7 +25,7 @@ JOBNAME  = "main"
 LATEXSRC = FileList['main.tex', File.join('includes', '**', '*.tex')]
 LATEXOUT = "build/#{JOBNAME}.pdf"
 
-CLOBBER.include [LATEXOUT]
+CLEAN.include "build/*"
 
 task default: [LATEXOUT]
 
