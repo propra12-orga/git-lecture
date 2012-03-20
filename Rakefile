@@ -1,4 +1,5 @@
 require 'rake/clean'
+require 'redcarpet'
 module Colors
   def colorize(text, color_code)
     "\033[#{color_code}m#{text}\033[0m"
@@ -31,4 +32,12 @@ task default: [LATEXOUT]
 
 file LATEXOUT => LATEXSRC do |f|
   sh "latexmk -pdf -pvc --jobname=\"#{LATEXOUT.gsub '.pdf', ''}\" #{JOBNAME}.tex"
+end
+
+README="Readme.md"
+task readme: README do
+  m = Redcarpet::Markdown.new Redcarpet::Render::HTML, autolink: true, space_after_headers: true
+  html = m.render File.read README
+  File.write "/tmp/readme.html", html
+  sh "opera /tmp/readme.html"
 end
