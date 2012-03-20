@@ -11,6 +11,8 @@ Es sind folgende Abhängigkeiten erforderlich:
 3. latexmk
 4. evince
 
+Installation unter Gentoo oder Linux:
+
 - Für Gentoo: `emerge pygments latexmk evince`
 - Für Ubuntu: `apt-get install latexmk evince python-pygments` (siehe auch http://wiki.ubuntuusers.de/Pygments)
 
