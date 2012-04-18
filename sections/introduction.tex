@@ -45,6 +45,24 @@
   \end{itemize}
 \end{frame}
 %
+\begin{frame}
+  \frametitle{Lösungen}
+  \begin{itemize}
+    \item Naive Lösungen
+      \begin{itemize}
+        \item Manuelles Speichern verschiedener Versionen von Dateien\\
+          \includegraphics[width=.5\textwidth]{images/manuell}
+        \item<2->Auskommentieren von altem Code\\
+          \includegraphics[width=.3\textwidth]{images/auskommentiert}
+      \end{itemize}
+    \item<3->Versionskontrolle
+      \begin{itemize}
+        \item CVS, SVN
+        \item<4->Für diese Veranstaltung: GIT
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+%
 %
 \subsection{Arbeitsschritte \& Schnappschüsse}
 \begin{frame}
@@ -52,9 +70,33 @@
   \tableofcontents[currentsection,currentsubsection]
 \end{frame}
 %
-%
-\subsection{Entwicklungszweige}
 \begin{frame}
-  \frametitle{Entwicklungszweige}
+  \frametitle{Vokabular}
+  \vspace{-7mm}
+  \begin{description}
+    \item[SCM] Source Control Management
+    \item[Arbeitskopie]<2->Alle Dateien in einer bestimmten Version
+    \item[Repository]<3->Enthält alle Versionen, Entwicklungszweige, etc.
+    \item[Commit]<4->Version des Projekts oder einer Datei (auch Revision)
+    \item[commit]<4->Erstellen eines neuen Commits im Repository
+    \item[Branch]<5->Entwicklungszweig. Mindestens \texttt{master}-Branch
+    \item[Tag]<6->Markierung eines Commits, z.B. als bestimmtes Release
+    \item[Konflikt]<7->Kollidierende Änderungen
+    \item[Merge]<8->Zusammenführung der Änderungen mehrerer Commits
+    \item[Graph]<9->Baum, der sich aus der Commit-Historie ergibt
+    \item[Remote]<10->Server im Netz mit zentralem Repository
+  \end{description}
+\end{frame}
+%
+\begin{frame}
+  \begin{center}
+    \includegraphics[height=\textheight]{images/problem}
+  \end{center}
+\end{frame}
+%
+%
+\subsection{Arbeitsweise}
+\begin{frame}
+  \frametitle{Arbeitsweise}
   \tableofcontents[currentsection,currentsubsection]
 \end{frame}
