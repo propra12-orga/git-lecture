@@ -187,3 +187,51 @@
     \end{tabular}
   \end{center}
 \end{frame}
+%
+\subsection{Workflow}
+\begin{frame}
+  \frametitle{Workflow}
+  \tableofcontents[currentsection,currentsubsection]
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Workflow}
+  \begin{itemize}
+    \item Repository erstellen $\Leftrightarrow$ Arbeitskopie auschecken
+      \begin{minted}[gobble=8]{sh}
+        $ git init
+      \end{minted}
+    \item<2->Optional: Erzeugen einer \texttt{.gitignore}-Datei
+    \item<3->Optional: Hinzufügen von Remotes
+      \begin{minted}[gobble=8]{sh}
+        $ git remote add origin git@thisdone.de:my_project.git
+      \end{minted}
+    \item<4->Dateien und Änderungen hinzufügen:
+      \begin{minted}[gobble=8]{sh}
+        $ git add .
+      \end{minted}
+    \item<5->Commit:
+      \begin{minted}[gobble=8]{sh}
+        $ git commit -m "Commit message"
+      \end{minted}
+    \item<6->Optional: Push auf Remote
+      \begin{minted}[gobble=8]{sh}
+        $ git push origin master
+      \end{minted}
+    \item<7->Hilfe für fast alle Kommandos: \texttt{git help <command>}
+  \end{itemize}
+\end{frame}
+%
+\begin{frame}
+  \frametitle{Dateien}
+  \begin{center}
+    \includegraphics[height=.75\textheight]{images/git-lifecycle.png}
+  \end{center}
+\end{frame}
+%
+\begin{frame}
+  \frametitle{Remotes}
+  \begin{center}
+    \vspace{-7mm}
+    \includegraphics[height=.75\textheight]{images/local-remote-workflow-git.png}
+  \end{center}
+\end{frame}
