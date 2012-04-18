@@ -100,3 +100,44 @@
   \frametitle{Arbeitsweise}
   \tableofcontents[currentsection,currentsubsection]
 \end{frame}
+%
+\begin{frame}
+  \frametitle{Commits}
+  \begin{enumerate}
+    \item Synchronisation mit dem zentralen Repository
+    \item<2->Arbeit am Projekt
+    \item<3->Commit der Änderungen\footnote{\tiny Bei zentralen Systemen wie SVN entfällt der Schritt an dieser Stelle und ersetzt dafür den letzten}
+    \item<4->Wiederholung des ersten Schritts
+    \item<5->Lösen von Konflikten
+    \item<6->Upload der Commits ins zentrale Repository
+  \end{enumerate}
+\end{frame}
+%
+\begin{frame}
+  \frametitle{Commits - Best Practices}
+  \begin{itemize}
+    \item Commit $\neq$ Undo
+    \item<2->Gemeinsamer Commit zusammengehöriger Änderungen
+    \item<3->Getrennter Commit verschiedener Änderungen
+    \item<4->\textbf{Keinen unsauberen Code committen}
+      \begin{itemize}
+        \item<5->Nicht kompilierend
+        \item<5->Fehlschlagende Tests
+        \item<5->Debugging-Ausgaben
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+%
+\begin{frame}
+  \frametitle{Vorteile für die Entwickler}
+  \begin{itemize}
+    \item Einfache Organisation der gemeinsamen Arbeit
+    \item Bei Präsentationen stets verfügbare stabile Versionen
+    \item Alte Ideen konserviert
+    \item Neue Ideen einfach experimentierbar
+      \begin{itemize}
+        \item<2->Versionskontrolle nur halbe Miete
+        \item<2->Automatisierte Tests ebenfalls erforderlich (Vorlesung nächste Woche)
+      \end{itemize}
+  \end{itemize}
+\end{frame}
